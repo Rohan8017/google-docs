@@ -4,6 +4,9 @@
     font-family: Helvetica, sans-serif;
     font-size: 16px;
 }
+* > i{
+    opacity: .7;
+}
 header{
     height: 40px;
     display: flex;
@@ -12,10 +15,10 @@ header{
     overflow-x: hidden;
 }
 .header-icon{
-    width: 3.5vw;
+    width: 60px;
     height: 100%;
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
 }
 .header-icon img{
@@ -34,15 +37,20 @@ header{
 }
 .document-icon i{
     margin-left: 10px;
+    opacity: .6;
 }
 .document-buttons{
     margin-left: -4px;
 }
 .document-buttons button{
     /* margin-top: 5px; */
-   padding: 4px;
+   padding: 6px;
    background: none;
    border: none;
+}
+.document-buttons button:hover{
+    background:rgba(128, 128, 128, 0.241);
+    border-radius: 10px;
 }
 .doc-timing{
     margin-left: 15px;
@@ -53,7 +61,6 @@ header{
 .right-header{
     display: flex;
     height: 100%;
-    border-left: 1px solid rgba(128, 128, 128, 0.405);
     justify-content: center;
     align-items: center;
     padding-left: 20px;
@@ -82,19 +89,126 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(57, 57, 225);
-    border-radius: 10px;
+    background: #1a73e8;
+    border-radius: 4px;
     color: white;
 }
 .google-meet-icon{
     width: 60px;
-    border: 1px solid rgba(128, 128, 128, 0.722);
+    border: 1px solid rgba(128, 128, 128, 0.282);
     border-radius: 40%;
     padding-left: 10px;
+    display: flex;
+    align-items: center;
 }
-.google-meet-icon img{
-    height: 35px;
-}.share-button svg{
+.google-meet-icon:hover{
+    background: rgba(128, 128, 128, 0.237);
+}
+.google-meet-icon .google-meet-img{
+    height: 30px;
+}
+.share-button svg{
     fill: white;
     margin-right: 5px;
 }
+.down-icon-img{
+    width: 15px;
+    margin-left: 5px;
+}
+.profile-button img{
+    width: 30px;
+    border-radius: 50%;
+}
+.profile-button img:hover{
+    border: 2px solid rgba(128, 128, 128, 0.516);
+}
+/* starting property bar */
+.cointainer{
+    display: flex;
+}
+.cointainer .property-bar{
+    display: flex;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.379);
+    width: 1400px
+}
+.property-bar div img{
+    width: 17px;
+}
+.property-bar .p-button{
+    margin-right: 15px;
+    opacity: .7;
+}
+.padding-left-right{
+    padding: 0 10px;
+    margin-top: -5px;
+}
+.dropdown{
+    border: none;
+    /* border-right: 1px solid rgb(128, 128, 128); */
+    border-left: 1px solid rgb(128, 128, 128);
+}
+.fonts-name{
+    border-right: 1px solid rgb(128, 128, 128);
+    padding-left: 10px;
+}
+.fonts-size{
+    border: 1px solid black;
+    margin-right: 10px;
+    height: 20px;
+    margin-left: 10px;
+}
+.fonts-size span{
+    padding: 0 10px;
+}
+.reduce-font-size{
+    border-right: 1px solid rgb(128, 128, 128);
+}
+.increase-font-size{
+    border-left: 1px solid rgb(128, 128, 128);
+}
+.margin-top{
+    margin-top: 2px;
+    padding: 0 7px;
+}
+.highlight-colour{
+    border-right: 1px solid rgb(128, 128, 128);
+}
+.dropdown-button{
+    border-right: 1px solid rgb(128, 128, 128);
+}
+.text-justify-align{
+    border-right: 1px solid rgb(128, 128, 128);
+}
+.decrease-indent {
+    border-right: 1px solid rgb(128, 128, 128);
+}
+.editing{
+    padding: 5px;
+    min-width: 24px;
+    background: #1966d244;
+    color: #1967d2;
+    width: 130px;
+    /* height: 0px; */
+    border-radius: 10px;
+    margin-left: 4%;
+}
+.editing-text{
+    margin-left: 5px;
+    margin-right: 30px;
+}
+.show-hide-right-navbar{
+    margin-left: 10px;
+    /* border-right: 1px solid rgb(128, 128, 128); */
+    border-left: 1px solid rgb(128, 128, 128);
+}
+/* right navbar */
+.right-navbar{
+    border-left: 1px solid rgb(128, 128, 128);
+    /* height: 100px; */
+    /* position: fixed; */
+}
+
+
