@@ -1,26 +1,28 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Helvetica, sans-serif;
     font-size: 16px;
 }
 header{
     height: 40px;
     display: flex;
     padding: 15px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.405);
+    overflow-x: hidden;
 }
 .header-icon{
-    width: 8%;
+    width: 3.5vw;
     height: 100%;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
 }
 .header-icon img{
-    height: 40px;
+    height: 37px;
 }
 .middle-header{
-    
+    width: 76.5vw;
 }
 .document-name-icons{
     display: flex;
@@ -32,4 +34,67 @@ header{
 }
 .document-icon i{
     margin-left: 10px;
+}
+.document-buttons{
+    margin-left: -4px;
+}
+.document-buttons button{
+    /* margin-top: 5px; */
+   padding: 4px;
+   background: none;
+   border: none;
+}
+.doc-timing{
+    margin-left: 15px;
+    font-size: .9rem;
+    color: gray;
+    text-decoration: underline;
+}
+.right-header{
+    display: flex;
+    height: 100%;
+    border-left: 1px solid rgba(128, 128, 128, 0.405);
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+}
+.right-header div{
+    margin-left: 15px;
+}
+.message-icon{
+    height: 100%;
+    width: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.message-icon:hover{
+    background: rgba(128, 128, 128, 0.285);
+    border-radius: 50%;
+}
+.message-icon img{
+    height: 27px;
+}
+.share-button{
+    width: 80px;
+    height: 35px;
+    /* margin: auto 10px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(57, 57, 225);
+    border-radius: 10px;
+    color: white;
+}
+.google-meet-icon{
+    width: 60px;
+    border: 1px solid rgba(128, 128, 128, 0.722);
+    border-radius: 40%;
+    padding-left: 10px;
+}
+.google-meet-icon img{
+    height: 35px;
+}.share-button svg{
+    fill: white;
+    margin-right: 5px;
 }
