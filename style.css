@@ -13,6 +13,8 @@ header{
     padding: 15px;
     border-bottom: 1px solid rgba(128, 128, 128, 0.405);
     overflow-x: hidden;
+    position: fixed;
+    top: 0;
 }
 .header-icon{
     width: 60px;
@@ -123,16 +125,15 @@ header{
     border: 2px solid rgba(128, 128, 128, 0.516);
 }
 /* starting property bar */
-.cointainer{
-    display: flex;
-}
 .cointainer .property-bar{
     display: flex;
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid rgba(128, 128, 128, 0.379);
-    width: 1400px
+    width: 1415px;
+    position: fixed;
+    top: 71px;
 }
 .property-bar div img{
     width: 17px;
@@ -187,13 +188,15 @@ header{
 }
 .editing{
     padding: 5px;
-    min-width: 24px;
+    /* min-width: 24px; */
+    height: 18px;
     background: #1966d244;
     color: #1967d2;
     width: 130px;
     /* height: 0px; */
     border-radius: 10px;
     margin-left: 4%;
+    overflow-wrap: revert;
 }
 .editing-text{
     margin-left: 5px;
@@ -206,9 +209,23 @@ header{
 }
 /* right navbar */
 .right-navbar{
-    border-left: 1px solid rgb(128, 128, 128);
+    border-left: 1px solid rgba(128, 128, 128, 0.297);
+    position: fixed;
+    top: 71px;
+    right: 0;
     /* height: 100px; */
     /* position: fixed; */
+    width: 60px;
+    height: calc(100% - 71px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.right-navbar div img{
+    width: 20px;
+}
+.right-navbar div{
+    margin-top: 30px;
 }
 
 
