@@ -7,6 +7,10 @@
 * > i{
     opacity: .7;
 }
+body{
+    position: relative;
+    overflow: hidden;
+}
 header{
     height: 40px;
     display: flex;
@@ -15,6 +19,8 @@ header{
     overflow-x: hidden;
     position: fixed;
     top: 0;
+    left: 0; 
+    
 }
 .header-icon{
     width: 60px;
@@ -27,7 +33,7 @@ header{
     height: 37px;
 }
 .middle-header{
-    width: 76.5vw;
+    width: 73vw;
 }
 .document-name-icons{
     display: flex;
@@ -66,6 +72,7 @@ header{
     justify-content: center;
     align-items: center;
     padding-left: 20px;
+    width: 300px;
 }
 .right-header div{
     margin-left: 15px;
@@ -125,15 +132,19 @@ header{
     border: 2px solid rgba(128, 128, 128, 0.516);
 }
 /* starting property bar */
+
 .cointainer .property-bar{
     display: flex;
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid rgba(128, 128, 128, 0.379);
-    width: 1415px;
+    /* width: 1415px; */
     position: fixed;
     top: 71px;
+    width: calc(100% - 70px);
+    z-index: -1;
+
 }
 .property-bar div img{
     width: 17px;
@@ -227,5 +238,37 @@ header{
 .right-navbar div{
     margin-top: 30px;
 }
+.main-content{
+    background:rgba(128, 128, 128, 0.086);
+    position: absolute;
+    top: 160px;
+    width: calc(100% - 60px);
+    min-height: 100vh;
+    /* overflow: hidden; */
+    display: flex;
+    justify-content: center;
+}
+.main-content::-webkit-scrollbar {
+    height: 16px;
+    overflow: visible;
+    width: 16px;
+}
+#text-area{
+    width: 80vw;
+    height: 100vh;
+    /* background: red; */
+    /* z-index: 50; */
+    /* margin: auto 0; */
+    margin-top: 20px;
+    padding: 40px;
+    border: 1px solid rgba(128, 128, 128, 0.29);
+    background: white;
+    /* overflow: hidden; */
+    outline: none;
+}
+.active{
+    background-color: black;
+}
+
 
 

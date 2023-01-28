@@ -46,8 +46,8 @@
     </header>
     <div class="cointainer">
         <div class="property-bar">
-            <div class="p-button"><img src="images\undo.png" alt=""></div>
-            <div class="p-button"><img src="images\redo.png" alt=""></div>
+            <button onclick="formatDoc('undo')"><i class="fa-solid fa-rotate-left"></i></button>
+            <button onclick="formatDoc('redo')"><i class="fa-solid fa-rotate-right"></i></button>
             <div class="p-button"><img src="images\printer.png" alt=""></div>
             <div class="p-button"><img src="images\speeling-check.png" alt=""></div>
             <div class="p-button margin-right"><img src="images\print-format.png" alt=""></div>
@@ -69,55 +69,55 @@
             <div class="fonts-size " >
                 <span class="reduce-font-size">-</span><span>10</span><span class="increase-font-size">+</span>
             </div>
-            <div class="font-bold margin-top">
+            <button class="font-bold margin-top format" onclick="formatDoc('bold')">
                 <i class="fa-solid fa-b"></i>
-            </div>
-            <div class="font-italic  margin-top">
+            </button>
+            <button class="font-italic  margin-top format" onclick="formatDoc('italic')">
                 <i class="fa-solid fa-italic"></i>
-            </div>
-            <div class="font-underline margin-top">
+            </button>
+            <button class="font-underline margin-top format" onclick="formatDoc('underline')">
                 <i class="fa-solid fa-underline"></i>
-            </div>
-            <div class="font-colour margin-top">
+            </button>
+            <button class="font-colour margin-top">
                 <i class="fa-solid fa-font"></i>
-            </div>
-            <div class="highlight-colour margin-top">
+            </button>
+            <button class="highlight-colour margin-top">
                 <i class="fa-solid fa-highlighter"></i>
-            </div>
-            <div class="link-button margin-top">
+            </button>
+            <button class="link-button margin-top" onclick="addLink()">
                 <i class="fa-solid fa-link"></i>
-            </div>
-            <div class="comment-button margin-top">
+            </button>
+            <button class="comment-button margin-top">
                 <i class="fa-solid fa-comment"></i>
-            </div>
-            <div class="dropdown-button margin-top">
+            </button>
+            <button class="dropdown-button margin-top">
                 <i class="fa-regular fa-image"></i>
                 <i class="fa-solid fa-caret-down"></i>
-            </div>
-            <div class="text-left-align margin-top">
+            </button>
+            <button class="text-left-align margin-top align" onclick="formatDoc('justifyLeft')">
                 <i class="fa-solid fa-align-left"></i>
-            </div>
-            <div class="text-middle-align margin-top">
+            </button>
+            <button class="text-middle-align margin-top align" onclick="formatDoc('justifyCenter')">
                 <i class="fa-solid fa-align-center"></i>
-            </div>
-            <div class="text-right-align margin-top">
+            </button>
+            <button class="text-right-align margin-top align" onclick="formatDoc('justifyRight')">
                 <i class="fa-solid fa-align-right"></i>
-            </div>
-            <div class="text-justify-align margin-top">
+            </button>
+            <button class="text-justify-align margin-top align" onclick="formatDoc('justifyFull')">
                 <i class="fa-solid fa-align-justify"></i>
-            </div>
-            <div class="check-list margin-top">
+            </button>
+            <button class="check-list margin-top spacing">
                 <i class="fa-solid fa-list-check"></i>
                 <i class="fa-solid fa-caret-down"></i>
-            </div>
-            <div class="ul-bullet-list margin-top">
+            </button>
+            <button class="ul-bullet-list margin-top spacing" onclick="formatDoc('insertUnorderedList')">
                 <i class="fa-solid fa-list-ul"></i>
                 <i class="fa-solid fa-caret-down"></i>
-            </div>
-            <div class="ol-bullet-list margin-top">
+            </button>
+            <button class="ol-bullet-list margin-top" onclick="formatDoc('insertOrderedList')">
                 <i class="fa-solid fa-list-ol"></i>
                 <i class="fa-solid fa-caret-down"></i>
-            </div>
+            </button>
             <div class="increase-indent margin-top">
                 <i class="fa-solid fa-indent"></i>
             </div>
@@ -144,6 +144,9 @@
         <div class="google-contact"><img src="images\icons8-user-96.png" alt=""></div>
         <div class="google-maps"><img src="images\google-maps.png" alt=""></div>
     </div>
+    <main class="main-content">
+        <div id="text-area" contenteditable="true" spellcheck="false"></div>
+    </main>
     <script src="index.js"></script>
 </body>
 </html>
