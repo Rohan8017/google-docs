@@ -46,95 +46,146 @@
     </header>
     <div class="cointainer">
         <div class="property-bar">
-            <button onclick="formatDoc('undo')"><i class="fa-solid fa-rotate-left"></i></button>
-            <button onclick="formatDoc('redo')"><i class="fa-solid fa-rotate-right"></i></button>
-            <div class="p-button"><img src="images\printer.png" alt=""></div>
-            <div class="p-button"><img src="images\speeling-check.png" alt=""></div>
-            <div class="p-button margin-right"><img src="images\print-format.png" alt=""></div>
-            <select class="page-size-button dropdown padding-left-right">
-                <option value="100parcent">100%</option>
-                <option value="fit">Fit</option>
-                <option value="">50%</option>
-                <option value="">75%</option>
-                <option value="">125%</option>
-                <option value="">150%</option>
-                <option value="">200%</option>
-            </select>
-            <select class="text-type dropdown padding-left-right">
-                <option value="">Normal text</option>
-            </select>
-            <select class="fonts-name dropdown padding-left-right">
-                <option value="">Arial</option>
-            </select>
-            <div class="fonts-size " >
-                <span class="reduce-font-size">-</span><span>10</span><span class="increase-font-size">+</span>
-            </div>
-            <button class="font-bold margin-top format" onclick="formatDoc('bold')">
-                <i class="fa-solid fa-b"></i>
+            <button onclick="formatDoc('undo')" class="undo-button">
+                <i class="fa-solid fa-rotate-left"></i>
+                <span id="undo">undo(Ctrl+z)</span>
             </button>
-            <button class="font-italic  margin-top format" onclick="formatDoc('italic')">
-                <i class="fa-solid fa-italic"></i>
+            <button class="redo-button" onclick="formatDoc('redo')">
+                <i class="fa-solid fa-rotate-right"></i>
+                <span id="redo">redo(Ctrl+Y)</span>
             </button>
-            <button class="font-underline margin-top format" onclick="formatDoc('underline')">
-                <i class="fa-solid fa-underline"></i>
+            <button class="print-button">
+                <i class="fa-solid fa-print"></i>
+                <span id="print">Print(Ctrl+P)</span>
             </button>
-            <button class="font-colour margin-top">
-                <i class="fa-solid fa-font"></i>
+            <button class="spelling-check-button">
+                <i class="fa-regular fa-floppy-disk"></i>
+                <span id="spelling-check">Spelling and Grammer Check</span>
             </button>
-            <button class="highlight-colour margin-top">
-                <i class="fa-solid fa-highlighter"></i>
-            </button>
-            <button class="link-button margin-top" onclick="addLink()">
-                <i class="fa-solid fa-link"></i>
-            </button>
-            <button class="comment-button margin-top">
+            <button class="paint-format-button">
                 <i class="fa-solid fa-comment"></i>
+                <span id="paint-format">paint format</span>
             </button>
-            <button class="dropdown-button margin-top">
+            <select class="zoom-button" onchange="screenSize(this.value)">
+                <option value="750">100%</option>
+                <option value="1400">Fit</option>
+                <option value="350">50%</option>
+                <option value="900">75%</option>
+                <option value="1050">125%</option>
+                <option value="1300">150%</option>
+                <option value="1600">200%</option>
+            </select>
+            <select  class="text-type" onchange="fontType(this.value)">
+                <option value="1">Normal text</option>
+                <option value="3">title</option>
+                <option value="2">Heading 1</option>
+                <option value="1.5">heading 2</option>
+                <option value="1.17">heading 3</option>
+                <option value="1.10">heading 4</option>
+            </select>
+            <select id="mySelect" onchange="myFunction(this.value)">
+                <option value = "Times New Roman">Times New Roman</option>
+                <option value = "Monospace">Monospace</option>
+                <option value = "Sans-Serif">Sans Serif</option>
+                <option value = "Arial">Arial</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Tahoma">Tahoma</option>
+                <option value="Gill Sans">Gill Sans</option>
+            </select>
+            <select id="font-size" onchange="fontSize(this.value)">
+                <option value="12">12</option>
+                <option value="16">16</option>
+                <option value="20">20</option>
+                <option value="24">24</option>
+                <option value="28">28</option>
+                <option value="32">32</option>
+                <option value="36">36</option>
+            </select>
+            <hr class="vertical" />
+            <button class="font-bold " onclick="formatDoc('bold')">
+                <i class="fa-solid fa-b"></i>
+                <span id="bold">Bold(Ctrl+B)</span>
+            </button>
+            <button class="font-italic " onclick="formatDoc('italic')">
+                <i class="fa-solid fa-italic"></i>
+                <span id="italic">italic</span>
+            </button>
+            <button class="font-underline" onclick="formatDoc('underline')">
+                <i class="fa-solid fa-underline"></i>
+                <span id="underline">Underline(Ctrl+U)</span>
+            </button>
+            <button class="font-colour ">
+                <i class="fa-solid fa-font"></i>
+                <input type="color" oninput="formatDoc('foreColor', this.value); this.value='#000000';">
+                <span id="fontcolor">Text Colour</span>
+            </button>
+            <button class="highlight-colour ">
+                <i class="fa-solid fa-highlighter"></i>
+                <input type="color" oninput="formatDoc('hiliteColor', this.value); this.value='#000000';">
+                <span id="highlightcolour">Highlight Colour</span>
+            </button>
+            <hr class="vertical" />
+            <button class="link-button " onclick="addlink()">
+                <i class="fa-solid fa-link"></i>
+                <span id="link">Insert Link(Ctrl+K)</span>
+            </button>
+            <button class="comment-button ">
+                <i class="fa-solid fa-comment"></i>
+                <span id="comment">Add Comment</span>
+            </button>
+            <button class="image-button ">
                 <i class="fa-regular fa-image"></i>
                 <i class="fa-solid fa-caret-down"></i>
+                <span id="image">insert Image</span>
             </button>
-            <button class="text-left-align margin-top align" onclick="formatDoc('justifyLeft')">
+            <hr class="vertical" />
+            <button class="text-left-align" onclick="formatDoc('justifyLeft')">
                 <i class="fa-solid fa-align-left"></i>
+                <span id="left-align">Left Align</span>
             </button>
-            <button class="text-middle-align margin-top align" onclick="formatDoc('justifyCenter')">
+            <button class="text-middle-align" onclick="formatDoc('justifyCenter')">
                 <i class="fa-solid fa-align-center"></i>
+                <span id="middle-align">Middle Align</span>
             </button>
-            <button class="text-right-align margin-top align" onclick="formatDoc('justifyRight')">
+            <button class="text-right-align" onclick="formatDoc('justifyRight')">
                 <i class="fa-solid fa-align-right"></i>
+                <!-- <span id="right-align">Right Align</span> -->
             </button>
-            <button class="text-justify-align margin-top align" onclick="formatDoc('justifyFull')">
+            <button class="text-justify-align" onclick="formatDoc('justifyFull')">
                 <i class="fa-solid fa-align-justify"></i>
             </button>
-            <button class="check-list margin-top spacing">
+            <hr class="vertical" />
+            <button class="check-list">
                 <i class="fa-solid fa-list-check"></i>
                 <i class="fa-solid fa-caret-down"></i>
             </button>
-            <button class="ul-bullet-list margin-top spacing" onclick="formatDoc('insertUnorderedList')">
+            <button class="ul-bullet-list" onclick="formatDoc('insertUnorderedList')">
                 <i class="fa-solid fa-list-ul"></i>
                 <i class="fa-solid fa-caret-down"></i>
             </button>
-            <button class="ol-bullet-list margin-top" onclick="formatDoc('insertOrderedList')">
+            <button class="ol-bullet-list " onclick="formatDoc('insertOrderedList')">
                 <i class="fa-solid fa-list-ol"></i>
                 <i class="fa-solid fa-caret-down"></i>
             </button>
-            <div class="increase-indent margin-top">
+            <button class="increase-indent ">
                 <i class="fa-solid fa-indent"></i>
-            </div>
-            <div class="decrease-indent margin-top">
+            </button>
+            <button class="decrease-indent ">
                 <i class="fa-solid fa-outdent"></i>
-            </div>
-            <div class="clear-style margin-top">
+            </button>
+            <hr class="vertical" />
+            <button class="clear-style " onclick="formatDoc('unlink')">
                 <i class="fa-solid fa-text-slash"></i>
-            </div>
+            </button>
             <div class="editing">
                 <i class="fa-solid fa-pencil "></i>
                 <span class="editing-text">Editing</span>
                 <i class="fa-solid fa-caret-down"></i>
             </div>
-            <div class="show-hide-right-navbar margin-top">
+            <hr class="vertical" />
+            <button class="show-hide-right-navbar ">
                 <i class="fa-solid fa-angle-up"></i>
-            </div>
+            </button>
         </div>
     </div>
     <div class="right-navbar">
