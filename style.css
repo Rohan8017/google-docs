@@ -1,26 +1,26 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: Helvetica, sans-serif;
-    font-size: 16px;
+    /* font-family: Helvetica, sans-serif; */
+    /* font-size: 16px; */
 }
 * > i{
     opacity: .7;
 }
 body{
-    position: relative;
-    overflow: hidden;
+    /* position: relative; */
+     /* overflow: hidden; */
 }
 header{
     height: 40px;
     display: flex;
     padding: 15px;
     border-bottom: 1px solid rgba(128, 128, 128, 0.405);
-    overflow-x: hidden;
-    position: fixed;
+    /* overflow-x: hidden; */
+    position: sticky;
     top: 0;
-    left: 0; 
-    
+    z-index:5;
+    background: white;
 }
 .header-icon{
     width: 60px;
@@ -133,17 +133,18 @@ header{
 }
 /* starting property bar */
 
-.cointainer .property-bar{
+.property-bar{
     display: flex;
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid rgba(128, 128, 128, 0.379);
     /* width: 1415px; */
-    position: fixed;
+    position: sticky;
     top: 71px;
     width: calc(100% - 70px);
     /* z-index: -1; */
+    background:white;
 }
 .property-bar button{
     padding-left: 7px;
@@ -173,7 +174,7 @@ header{
 .border-left{
     border-left: 1px solid rgba(128, 128, 128, 0.297);
 }
-.editing{
+.editing-div{
     padding: 5px;
     /* min-width: 24px; */
     /* height: 18px; */
@@ -182,11 +183,13 @@ header{
     width: 110px;
     /* height: 0px; */
     border-radius: 10px;
-    margin-left: 8%;
+    /* margin-left: 8%; */
     /* overflow-wrap: revert; */
-    overflow-y: hidden;
-    overflow-x: hidden;
-    margin-right: 8px;
+    /* overflow-y: hidden;
+    overflow-x: hidden; */
+    /* margin-right: 8px; */
+    position: absolute;
+    right: 110px;
 }
 .editing-text{
     margin-left: 5px;
@@ -218,25 +221,29 @@ hr.vertical {
 }
 .main-content{
     background:rgba(128, 128, 128, 0.123);
-    position: absolute;
-    top: 123px;
+    /* position: relative; */
+    /* top: 123px; */
     width: calc(100% - 60px);
-    min-height: 100vh;
+    height: 1200px;
     /* overflow: hidden; */
-    display: flex;
+    /* display: flex; */
     /* z-index: -5; */
-    justify-content: center;
-    overflow-x: scroll;
+    /* justify-content: center; */
+    /* /* overflow-y: scroll; */
     overflow-y: scroll;
+    padding-top: 10px;
 }
+/* .main-content::-webkit-scrollbar{
+    width: 20px;
+} */
 #text-area{
     width: 750px;
     height: 100vh;
     /* background: red; */
     /* z-index: 50; */
-    /* margin: auto 0; */
-    margin-top: 20px;
-    padding: 40px;
+    margin: 10px auto;
+    /* -top: 20px; */
+    padding: 20px;
     border: 1px solid rgba(128, 128, 128, 0.29);
     background: white;
     /* overflow: hidden; */
@@ -252,6 +259,10 @@ hr.vertical {
 .highlight-colour input{
     width: 20px;
     height: 15px;
+}
+.show-hide-right-navbar{
+    position: absolute;
+    left: 300px;
 }
 #bold,#italic,#undo,#redo,#print,#spelling-check,#paint-format,#zoom,#underline,
 #fontcolor,#highlightcolour,#link,#comment,#image,#left-align,#middle-align{
@@ -317,6 +328,7 @@ hr.vertical {
 .text-right-align:hover #right-align{
     visibility: visible;
 }
+
 
 
 

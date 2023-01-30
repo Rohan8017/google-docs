@@ -201,8 +201,27 @@ buttonArray.forEach((button) => {
 //         bold.style.visibility='hidden';
 //     }
 // })
-
-
+// function changeFont() {
+//     const Font = document.getElementById('input-font').value;
+//     document.execCommand('fontName', false, Font);
+// }
+function changeFont() {
+    const Font = document.getElementById('input-font').value;
+    document.execCommand('fontName', false, Font);
+}
+  function changeSize() {
+    const size = document.getElementById('fontSize').value;
+    document.execCommand('fontSize', false, size);
+}
+const mainContent=document.querySelector('.main-content');
+const addNewDiv=document.getElementById('add-div');
+document.addEventListener('click',()=>{
+    const div=document.createElement('div');
+    div.setAttribute('id','text-area');
+    div.setAttribute('contenteditable','true');
+    div.setAttribute('spellcheck','false');
+    mainContent.appendChild(div);
+})
 
 
 

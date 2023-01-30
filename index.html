@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Docs</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
     <header>
         <div class="header-icon"><img src="images\Google-Docs-Icon.jpg"></div>
@@ -22,7 +28,9 @@
                 </div>
             </div>
             <nav class="document-buttons">
-                <button class="file-button"><p>File</p></button>
+                <button class="file-button">
+                    <p>File</p>
+                </button>
                 <button class="Edit-button">Edit</button>
                 <button class="view-button">View</button>
                 <button class="insert-button">Insert</button>
@@ -35,158 +43,177 @@
         </div>
         <div class="right-header">
             <div class="message-icon"><img src="images\comment.png" alt=""></div>
-            <div class="google-meet-icon"><img class="google-meet-img" src="images\google-meet.png" alt=""><img class="down-icon-img" src="images\down-icon.png" alt=""></div>
-            <div class="share-button"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                width="14" height="14"
-                viewBox="0 0 24 24">
-                    <path d="M 12 1 C 8.6761905 1 6 3.6761905 6 7 L 6 8 L 4 8 L 4 22 L 20 22 L 20 8 L 18 8 L 18 7 C 18 3.6761905 15.32381 1 12 1 z M 12 3 C 14.27619 3 16 4.7238095 16 7 L 16 8 L 8 8 L 8 7 C 8 4.7238095 9.7238095 3 12 3 z M 12 13 C 13.1 13 14 13.9 14 15 C 14 16.1 13.1 17 12 17 C 10.9 17 10 16.1 10 15 C 10 13.9 10.9 13 12 13 z"></path>
+            <div class="google-meet-icon"><img class="google-meet-img" src="images\google-meet.png" alt=""><img
+                    class="down-icon-img" src="images\down-icon.png" alt=""></div>
+            <div class="share-button"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="14" height="14"
+                    viewBox="0 0 24 24">
+                    <path
+                        d="M 12 1 C 8.6761905 1 6 3.6761905 6 7 L 6 8 L 4 8 L 4 22 L 20 22 L 20 8 L 18 8 L 18 7 C 18 3.6761905 15.32381 1 12 1 z M 12 3 C 14.27619 3 16 4.7238095 16 7 L 16 8 L 8 8 L 8 7 C 8 4.7238095 9.7238095 3 12 3 z M 12 13 C 13.1 13 14 13.9 14 15 C 14 16.1 13.1 17 12 17 C 10.9 17 10 16.1 10 15 C 10 13.9 10.9 13 12 13 z">
+                    </path>
                 </svg>Share</div>
             <div class="profile-button"><img src="images\profie-img.png" alt=""></div>
         </div>
     </header>
-    <div class="cointainer">
-        <div class="property-bar">
-            <button onclick="formatDoc('undo')" class="undo-button">
-                <i class="fa-solid fa-rotate-left"></i>
-                <span id="undo">undo(Ctrl+z)</span>
-            </button>
-            <button class="redo-button" onclick="formatDoc('redo')">
-                <i class="fa-solid fa-rotate-right"></i>
-                <span id="redo">redo(Ctrl+Y)</span>
-            </button>
-            <button class="print-button">
-                <i class="fa-solid fa-print"></i>
-                <span id="print">Print(Ctrl+P)</span>
-            </button>
-            <button class="spelling-check-button">
-                <i class="fa-regular fa-floppy-disk"></i>
-                <span id="spelling-check">Spelling and Grammer Check</span>
-            </button>
-            <button class="paint-format-button">
-                <i class="fa-solid fa-comment"></i>
-                <span id="paint-format">paint format</span>
-            </button>
-            <select class="zoom-button" onchange="screenSize(this.value)">
-                <option value="750">100%</option>
-                <option value="1400">Fit</option>
-                <option value="350">50%</option>
-                <option value="900">75%</option>
-                <option value="1050">125%</option>
-                <option value="1300">150%</option>
-                <option value="1600">200%</option>
-            </select>
-            <select  class="text-type" onchange="fontType(this.value)">
-                <option value="1">Normal text</option>
-                <option value="3">title</option>
-                <option value="2">Heading 1</option>
-                <option value="1.5">heading 2</option>
-                <option value="1.17">heading 3</option>
-                <option value="1.10">heading 4</option>
-            </select>
-            <select id="mySelect" onchange="myFunction(this.value)">
-                <option value = "Times New Roman">Times New Roman</option>
-                <option value = "Monospace">Monospace</option>
-                <option value = "Sans-Serif">Sans Serif</option>
-                <option value = "Arial">Arial</option>
-                <option value="Verdana">Verdana</option>
-                <option value="Tahoma">Tahoma</option>
-                <option value="Gill Sans">Gill Sans</option>
-            </select>
-            <select id="font-size" onchange="fontSize(this.value)">
-                <option value="12">12</option>
-                <option value="16">16</option>
-                <option value="20">20</option>
-                <option value="24">24</option>
-                <option value="28">28</option>
-                <option value="32">32</option>
-                <option value="36">36</option>
-            </select>
-            <hr class="vertical" />
-            <button class="font-bold " onclick="formatDoc('bold')">
-                <i class="fa-solid fa-b"></i>
-                <span id="bold">Bold(Ctrl+B)</span>
-            </button>
-            <button class="font-italic " onclick="formatDoc('italic')">
-                <i class="fa-solid fa-italic"></i>
-                <span id="italic">italic</span>
-            </button>
-            <button class="font-underline" onclick="formatDoc('underline')">
-                <i class="fa-solid fa-underline"></i>
-                <span id="underline">Underline(Ctrl+U)</span>
-            </button>
-            <button class="font-colour ">
-                <i class="fa-solid fa-font"></i>
-                <input type="color" oninput="formatDoc('foreColor', this.value); this.value='#000000';">
-                <span id="fontcolor">Text Colour</span>
-            </button>
-            <button class="highlight-colour ">
-                <i class="fa-solid fa-highlighter"></i>
-                <input type="color" oninput="formatDoc('hiliteColor', this.value); this.value='#000000';">
-                <span id="highlightcolour">Highlight Colour</span>
-            </button>
-            <hr class="vertical" />
-            <button class="link-button " onclick="addlink()">
-                <i class="fa-solid fa-link"></i>
-                <span id="link">Insert Link(Ctrl+K)</span>
-            </button>
-            <button class="comment-button ">
-                <i class="fa-solid fa-comment"></i>
-                <span id="comment">Add Comment</span>
-            </button>
-            <button class="image-button ">
-                <i class="fa-regular fa-image"></i>
-                <i class="fa-solid fa-caret-down"></i>
-                <span id="image">insert Image</span>
-            </button>
-            <hr class="vertical" />
-            <button class="text-left-align" onclick="formatDoc('justifyLeft')">
-                <i class="fa-solid fa-align-left"></i>
-                <span id="left-align">Left Align</span>
-            </button>
-            <button class="text-middle-align" onclick="formatDoc('justifyCenter')">
-                <i class="fa-solid fa-align-center"></i>
-                <span id="middle-align">Middle Align</span>
-            </button>
-            <button class="text-right-align" onclick="formatDoc('justifyRight')">
-                <i class="fa-solid fa-align-right"></i>
-                <!-- <span id="right-align">Right Align</span> -->
-            </button>
-            <button class="text-justify-align" onclick="formatDoc('justifyFull')">
-                <i class="fa-solid fa-align-justify"></i>
-            </button>
-            <hr class="vertical" />
-            <button class="check-list">
-                <i class="fa-solid fa-list-check"></i>
-                <i class="fa-solid fa-caret-down"></i>
-            </button>
-            <button class="ul-bullet-list" onclick="formatDoc('insertUnorderedList')">
-                <i class="fa-solid fa-list-ul"></i>
-                <i class="fa-solid fa-caret-down"></i>
-            </button>
-            <button class="ol-bullet-list " onclick="formatDoc('insertOrderedList')">
-                <i class="fa-solid fa-list-ol"></i>
-                <i class="fa-solid fa-caret-down"></i>
-            </button>
-            <button class="increase-indent ">
-                <i class="fa-solid fa-indent"></i>
-            </button>
-            <button class="decrease-indent ">
-                <i class="fa-solid fa-outdent"></i>
-            </button>
-            <hr class="vertical" />
-            <button class="clear-style " onclick="formatDoc('unlink')">
-                <i class="fa-solid fa-text-slash"></i>
-            </button>
-            <div class="editing">
+    <div class="property-bar">
+        <button onclick="formatDoc('undo')" class="undo-button">
+            <i class="fa-solid fa-rotate-left"></i>
+            <span id="undo">undo(Ctrl+z)</span>
+        </button>
+        <button class="redo-button" onclick="formatDoc('redo')">
+            <i class="fa-solid fa-rotate-right"></i>
+            <span id="redo">redo(Ctrl+Y)</span>
+        </button>
+        <button class="print-button">
+            <i class="fa-solid fa-print"></i>
+            <span id="print">Print(Ctrl+P)</span>
+        </button>
+        <button class="spelling-check-button">
+            <i class="fa-regular fa-floppy-disk"></i>
+            <span id="spelling-check">Spelling and Grammer Check</span>
+        </button>
+        <button class="paint-format-button" id="add-div">
+            <i class="fa-solid fa-comment"></i>
+            <span id="paint-format">paint format</span>
+        </button>
+        <select class="zoom-button" onchange="screenSize(this.value)">
+            <option value="750">100%</option>
+            <option value="1400">Fit</option>
+            <option value="350">50%</option>
+            <option value="900">75%</option>
+            <option value="1050">125%</option>
+            <option value="1300">150%</option>
+            <option value="1600">200%</option>
+        </select>
+        <select class="text-type" onchange="fontType(this.value)">
+            <option value="1">Normal text</option>
+            <option value="3">title</option>
+            <option value="2">Heading 1</option>
+            <option value="1.5">heading 2</option>
+            <option value="1.17">heading 3</option>
+            <option value="1.10">heading 4</option>
+        </select>
+
+        <select id="input-font" class="input" onchange="changeFont (this);">
+            <option value="Arial">Arial</option>
+            <option value="Helvetica">Helvetica</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Sans serif">Sans serif</option>
+            <option value="Courier New">Courier New</option>
+            <option value="Verdana">Verdana</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Palatino">Palatino</option>
+            <option value="Garamond">Garamond</option>
+            <option value="Comic Sans MS">Comic Sans MS</option>
+            <option value="Arial Black">Arial Black</option>
+            <option value="Tahoma">Tahoma</option>
+            <option value="Comic Sans MS">Comic Sans MS</option>
+        </select>
+        <select id="fontSize" onclick="changeSize()">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="14">14</option>
+            <option value="16">16</option>
+            <option value="18">18</option>
+            <option value="20">20</option>
+        </select>
+        <hr class="vertical" />
+        <button class="font-bold " onclick="formatDoc('bold')">
+            <i class="fa-solid fa-b"></i>
+            <span id="bold">Bold(Ctrl+B)</span>
+        </button>
+        <button class="font-italic " onclick="formatDoc('italic')">
+            <i class="fa-solid fa-italic"></i>
+            <span id="italic">italic</span>
+        </button>
+        <button class="font-underline" onclick="formatDoc('underline')">
+            <i class="fa-solid fa-underline"></i>
+            <span id="underline">Underline(Ctrl+U)</span>
+        </button>
+        <button class="font-colour ">
+            <i class="fa-solid fa-font"></i>
+            <input type="color" oninput="formatDoc('foreColor', this.value); this.value='#000000';">
+            <span id="fontcolor">Text Colour</span>
+        </button>
+        <button class="highlight-colour ">
+            <i class="fa-solid fa-highlighter"></i>
+            <input type="color" oninput="formatDoc('hiliteColor', this.value); this.value='#000000';">
+            <span id="highlightcolour">Highlight Colour</span>
+        </button>
+        <hr class="vertical" />
+        <button class="link-button " onclick="addlink()">
+            <i class="fa-solid fa-link"></i>
+            <span id="link">Insert Link(Ctrl+K)</span>
+        </button>
+        <button class="comment-button ">
+            <i class="fa-solid fa-comment"></i>
+            <span id="comment">Add Comment</span>
+        </button>
+        <button class="image-button ">
+            <i class="fa-regular fa-image"></i>
+            <i class="fa-solid fa-caret-down"></i>
+            <span id="image">insert Image</span>
+        </button>
+        <hr class="vertical" />
+        <button class="text-left-align" onclick="formatDoc('justifyLeft')">
+            <i class="fa-solid fa-align-left"></i>
+            <span id="left-align">Left Align</span>
+        </button>
+        <button class="text-middle-align" onclick="formatDoc('justifyCenter')">
+            <i class="fa-solid fa-align-center"></i>
+            <span id="middle-align">Middle Align</span>
+        </button>
+        <button class="text-right-align" onclick="formatDoc('justifyRight')">
+            <i class="fa-solid fa-align-right"></i>
+            <!-- <span id="right-align">Right Align</span> -->
+        </button>
+        <button class="text-justify-align" onclick="formatDoc('justifyFull')">
+            <i class="fa-solid fa-align-justify"></i>
+        </button>
+        <hr class="vertical" />
+        <button class="check-list">
+            <i class="fa-solid fa-list-check"></i>
+            <i class="fa-solid fa-caret-down"></i>
+        </button>
+        <button class="ul-bullet-list" onclick="formatDoc('insertUnorderedList')">
+            <i class="fa-solid fa-list-ul"></i>
+            <i class="fa-solid fa-caret-down"></i>
+        </button>
+        <button class="ol-bullet-list " onclick="formatDoc('insertOrderedList')">
+            <i class="fa-solid fa-list-ol"></i>
+            <i class="fa-solid fa-caret-down"></i>
+        </button>
+        <button class="increase-indent ">
+            <i class="fa-solid fa-indent"></i>
+        </button>
+        <button class="decrease-indent ">
+            <i class="fa-solid fa-outdent"></i>
+        </button>
+        <hr class="vertical" />
+        <button class="clear-style " onclick="formatDoc('unlink')">
+            <i class="fa-solid fa-text-slash"></i>
+        </button>
+        <div class="editing">
+            <div class="editing-div">
                 <i class="fa-solid fa-pencil "></i>
                 <span class="editing-text">Editing</span>
                 <i class="fa-solid fa-caret-down"></i>
             </div>
-            <hr class="vertical" />
-            <button class="show-hide-right-navbar ">
-                <i class="fa-solid fa-angle-up"></i>
-            </button>
+
         </div>
+        <!-- <hr class="vertical" /> -->
+        <button class="show-hide-right-navbar ">
+            <i class="fa-solid fa-angle-up"></i>
+        </button>
     </div>
     <div class="right-navbar">
         <div class="google-calender"><img src="images\google-calender.png" alt=""></div>
@@ -197,6 +224,7 @@
     </div>
     <main class="main-content">
         <div id="text-area" contenteditable="true" spellcheck="false"></div>
+        <!-- <div id="text-area" contenteditable="true" spellcheck="false"></div> -->
     </main>
     <script src="index.js"></script>
 </body>
