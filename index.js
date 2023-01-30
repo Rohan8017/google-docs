@@ -215,7 +215,7 @@ function changeFont() {
 }
 const mainContent=document.querySelector('.main-content');
 const addNewDiv=document.getElementById('add-div');
-document.addEventListener('click',()=>{
+addNewDiv.addEventListener('click',()=>{
     const div=document.createElement('div');
     div.setAttribute('id','text-area');
     div.setAttribute('contenteditable','true');
