@@ -202,15 +202,41 @@
         <button class="clear-style " onclick="formatDoc('unlink')">
             <i class="fa-solid fa-text-slash"></i>
         </button>
-        <div class="editing">
-            <div class="editing-div">
-                <i class="fa-solid fa-pencil "></i>
-                <span class="editing-text">Editing</span>
-                <i class="fa-solid fa-caret-down"></i>
+        <div class="editing-button">
+            <div class="editing-dropdown">
+                <div class="editing-div">
+                    <i id="icon-change" class="fa fa-pencil" aria-hidden="true"></i>
+                    <span class="editing-text">Editing</span>
+                    <i class="fa-solid fa-caret-down"></i>
+                </div>
             </div>
-
+            <div class="show-hide show-edit">
+                <ul class="modes options">
+                    <li class="option editing">
+                        <div>
+                            <i class="fa fa-pencil icon" aria-hidden="true"></i>
+                            <span class="editing-mode inner">Editing</span>
+                            <p>Edit Document Directly</p>
+                        </div>
+                    </li>
+                    <li class="option suggection">
+                        <div>
+                            <i class="fa fa-address-book-o icon" aria-hidden="true"></i>
+                            <span class="suggection-mode inner">Suggesting</span>
+                            <p>Edits Become Suggestion</p>
+                        </div>
+                    </li>
+                    <li class="option view">
+                        <div>
+                            <i class="fa fa-eye icon" aria-hidden="true"></i>
+                            <span class="editing-mode inner">Viewing</span>
+                            <p>Read or print final document</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <!-- <hr class="vertical" /> -->
+        <hr class="vertical" />
         <button class="show-hide-right-navbar ">
             <i class="fa-solid fa-angle-up"></i>
         </button>

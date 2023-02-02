@@ -4,6 +4,14 @@
 const textArea = document.getElementById('text-area');
 const fontName = document.getElementById('fontName');
 const advanceOption = document.querySelectorAll(".adv-option");
+const editMenu=document.querySelector(".editing-dropdown");
+const selectBtn=document.querySelector('.editing-div');
+const options=document.querySelectorAll('.option');
+const editingText=document.querySelector('.editing-text');
+const iconChange=document.querySelector('#icon-change');
+const showHide=document.querySelector('.show-hide');
+const mainContent=document.querySelector('.main-content');
+const addNewDiv=document.getElementById('add-div');
 // console.log(formatButtons);
 // formatButtons.forEach((buttons)=>{
 //     buttons.addEventListener('click',(e)=>{
@@ -106,7 +114,7 @@ function fontEditor(fontName) {
     document.execCommand("fontName", false, fontName);
 }
 function screenSize(val) {
-    textArea.style.width = `'${val}px'`;
+    textArea.style.width = `${val}px`;
 }
 function fontSize(size) {
     var sel = document.getSelection(); // Gets selection
@@ -213,6 +221,7 @@ function changeFont() {
     const size = document.getElementById('fontSize').value;
     document.execCommand('fontSize', false, size);
 }
+
 const mainContent=document.querySelector('.main-content');
 const addNewDiv=document.getElementById('add-div');
 addNewDiv.addEventListener('click',()=>{
@@ -223,6 +232,35 @@ addNewDiv.addEventListener('click',()=>{
     mainContent.appendChild(div);
 })
 
+selectBtn.addEventListener('click',()=>{
+    showHide.classList.toggle("show-edit");
+})
+options.forEach((option)=>{
+    // console.log(option);
+    option.addEventListener('click',(e)=>{
+        let selectedOption=option.querySelector('.inner').innerText;
+        if(selectedOption=='Viewing'){
+            textArea.setAttribute('contenteditable','false');
+        }else{
+            textArea.setAttribute('contenteditable','true');
+        }
+        // console.log(selectedOption);
+        editingText.innerText=selectedOption;
+        let icon=option.querySelector('.icon').className;
+        // console.log(icon);
+        let temp="";
+        temp=icon;
+        icon=iconChange.className;
+        iconChange.className=temp;
+        showHide.classList.add("show-edit");
+        // console.log(showHide.className)
+    })
+})
+// const bodyDiv=document.getElementsByTagName('body');
+// mainContent.addEventListener('mouseover',(ele)=>{
+//     // console.log('hello');
+//     console.log(ele.className);
+// })
 
 
 
