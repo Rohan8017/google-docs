@@ -47,6 +47,13 @@ header{
     margin-left: 10px;
     opacity: .6;
 }
+.editing-eye-icon{
+    width: 35px;
+    color: rgba(0, 0, 255, 0.836);
+    border: 1px solid rgba(128, 128, 128, 0.305);
+    /* padding: 0 20px; */
+    padding: 5px 3px;
+}
 .document-buttons{
     margin-left: -4px;
 }
@@ -244,7 +251,7 @@ hr.vertical {
     left: 300px;
 } */
 /* editing div */
-.editing-button{
+.editing-button,.editing-button2{
     position: relative;
     margin-left: 11.5%;
     margin-right: 5px;
@@ -262,7 +269,7 @@ hr.vertical {
     font-family:Arial, Helvetica, sans-serif ;
     font-size: 14px;
 }
-.show-hide{
+.show-hide,.show-hide2{
     position: absolute;
     z-index: 100;
     left: -55px;

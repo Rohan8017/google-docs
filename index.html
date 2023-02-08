@@ -43,6 +43,39 @@
         </div>
         <div class="right-header">
             <div class="message-icon"><img src="images\comment.png" alt=""></div>
+            <div class="editing-button2 show-edit">
+                <div class="editing-dropdown2">
+                    <div class="editing-eye-icon">
+                        <i class="fa fa-eye icon" aria-hidden="true"></i>
+                        <i class="fa-solid fa-caret-down"></i>
+                    </div>
+                </div>
+                <div class="show-hide2 show-edit">
+                    <ul class="modes options">
+                        <li class="option editing">
+                            <div>
+                                <i class="fa fa-pencil icon" aria-hidden="true"></i>
+                                <span class="editing-mode inner">Editing</span>
+                                <p>Edit Document Directly</p>
+                            </div>
+                        </li>
+                        <li class="option suggection">
+                            <div>
+                                <i class="fa fa-address-book-o icon" aria-hidden="true"></i>
+                                <span class="suggection-mode inner">Suggesting</span>
+                                <p>Edits Become Suggestion</p>
+                            </div>
+                        </li>
+                        <li class="option view">
+                            <div>
+                                <i class="fa fa-eye icon" aria-hidden="true"></i>
+                                <span class="editing-mode inner">Viewing</span>
+                                <p>Read or print final document</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
             <div class="google-meet-icon"><img class="google-meet-img" src="images\google-meet.png" alt=""><img
                     class="down-icon-img" src="images\down-icon.png" alt=""></div>
             <div class="share-button"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="14" height="14"
@@ -92,7 +125,6 @@
             <option value="1.17">heading 3</option>
             <option value="1.10">heading 4</option>
         </select>
-
         <select id="input-font" class="input" onchange="changeFont (this);">
             <option value="Arial">Arial</option>
             <option value="Helvetica">Helvetica</option>
@@ -116,30 +148,21 @@
             <option value="5">5</option>
             <option value="6">6</option>
             <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            <option value="14">14</option>
-            <option value="16">16</option>
-            <option value="18">18</option>
-            <option value="20">20</option>
         </select>
         <hr class="vertical" />
-        <button class="font-bold " onclick="formatDoc('bold')">
+        <button class="font-bold  format" onclick="formatDoc('bold')">
             <i class="fa-solid fa-b"></i>
             <span id="bold">Bold(Ctrl+B)</span>
         </button>
-        <button class="font-italic " onclick="formatDoc('italic')">
+        <button class="font-italic  format" onclick="formatDoc('italic')">
             <i class="fa-solid fa-italic"></i>
             <span id="italic">italic</span>
         </button>
-        <button class="font-underline" onclick="formatDoc('underline')">
+        <button class="font-underline  format" onclick="formatDoc('underline')">
             <i class="fa-solid fa-underline"></i>
             <span id="underline">Underline(Ctrl+U)</span>
         </button>
-        <button class="font-colour ">
+        <button class="font-colour  format">
             <i class="fa-solid fa-font"></i>
             <input type="color" oninput="formatDoc('foreColor', this.value); this.value='#000000';">
             <span id="fontcolor">Text Colour</span>
@@ -154,48 +177,48 @@
             <i class="fa-solid fa-link"></i>
             <span id="link">Insert Link(Ctrl+K)</span>
         </button>
-        <button class="comment-button ">
+        <button class="comment-button">
             <i class="fa-solid fa-comment"></i>
             <span id="comment">Add Comment</span>
         </button>
-        <button class="image-button ">
+        <button class="image-button">
             <i class="fa-regular fa-image"></i>
             <i class="fa-solid fa-caret-down"></i>
             <span id="image">insert Image</span>
         </button>
-        <hr class="vertical" />
-        <button class="text-left-align" onclick="formatDoc('justifyLeft')">
+        <hr class="vertical"/>
+        <button class="text-left-align  align active" onclick="formatDoc('justifyLeft')">
             <i class="fa-solid fa-align-left"></i>
             <span id="left-align">Left Align</span>
         </button>
-        <button class="text-middle-align" onclick="formatDoc('justifyCenter')">
+        <button class="text-middle-align  align" onclick="formatDoc('justifyCenter')">
             <i class="fa-solid fa-align-center"></i>
             <span id="middle-align">Middle Align</span>
         </button>
-        <button class="text-right-align" onclick="formatDoc('justifyRight')">
+        <button class="text-right-align  align" onclick="formatDoc('justifyRight')">
             <i class="fa-solid fa-align-right"></i>
             <!-- <span id="right-align">Right Align</span> -->
         </button>
-        <button class="text-justify-align" onclick="formatDoc('justifyFull')">
+        <button class="text-justify-align  align" onclick="formatDoc('justifyFull')">
             <i class="fa-solid fa-align-justify"></i>
         </button>
         <hr class="vertical" />
-        <button class="check-list">
+        <button class="check-list bullet">
             <i class="fa-solid fa-list-check"></i>
             <i class="fa-solid fa-caret-down"></i>
         </button>
-        <button class="ul-bullet-list" onclick="formatDoc('insertUnorderedList')">
+        <button class="ul-bullet-list bullet" onclick="formatDoc('insertUnorderedList')">
             <i class="fa-solid fa-list-ul"></i>
             <i class="fa-solid fa-caret-down"></i>
         </button>
-        <button class="ol-bullet-list " onclick="formatDoc('insertOrderedList')">
+        <button class="ol-bullet-list bullet " onclick="formatDoc('insertOrderedList')">
             <i class="fa-solid fa-list-ol"></i>
             <i class="fa-solid fa-caret-down"></i>
         </button>
-        <button class="increase-indent ">
+        <button class="increase-indent spacing">
             <i class="fa-solid fa-indent"></i>
         </button>
-        <button class="decrease-indent ">
+        <button class="decrease-indent spacing">
             <i class="fa-solid fa-outdent"></i>
         </button>
         <hr class="vertical" />
