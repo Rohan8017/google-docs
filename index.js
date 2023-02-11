@@ -1,90 +1,104 @@
-// const alignButtons=document.querySelectorAll('.align');
-// const spacingButtons=document.querySelectorAll(".spacing");
-// const formatButtons=document.querySelectorAll('.format');
+const bulletButtons=document.querySelectorAll('.bullet')
+const alignButtons=document.querySelectorAll('.align');
+const spacingButtons=document.querySelectorAll(".spacing");
+const formatButtons=document.querySelectorAll('.format');
 const textArea = document.getElementById('text-area');
 const fontName = document.getElementById('fontName');
 const advanceOption = document.querySelectorAll(".adv-option");
 const editMenu=document.querySelector(".editing-dropdown");
 const selectBtn=document.querySelector('.editing-div');
+const selectBtn2=document.querySelector('.editing-eye-icon');
 const options=document.querySelectorAll('.option');
 const editingText=document.querySelector('.editing-text');
 const iconChange=document.querySelector('#icon-change');
 const showHide=document.querySelector('.show-hide');
+const showHide2=document.querySelector('.show-hide2');
 const mainContent=document.querySelector('.main-content');
 const addNewDiv=document.getElementById('add-div');
-// console.log(formatButtons);
-// formatButtons.forEach((buttons)=>{
-//     buttons.addEventListener('click',(e)=>{
-//         buttons.classList.toggle("active")
-//     })
-// })
-// // console.log(alignButtons);
-// alignButtons.forEach((buttons)=>{
-//     buttons.addEventListener('click',(e)=>{
-//         buttons.classList.toggle("active")
-//     })
-// })
-// // console.log(spacingButtons);
-// spacingButtons.forEach((buttons)=>{
-//     buttons.addEventListener('click',(e)=>{
-//         console.log(e.target)
-//         buttons.classList.toggle("active");
-//     })
-// })
-// const fontlist=['Arial','Verdana','Times New Roman','Garmond','Georgia','Courier New','cursive'];
-// const initializer=()=>{
-//     // highlighter(alignButtons,true);
-//     // highlighter(spacingButtons,true);
-//     // highlighter(formatButtons,false);
-//     fontlist.map((value) => {
-//         let option = document.createElement("option");
-//         option.value = value;
-//         option.innerHTML = value;
-//         fontName.appendChild(option);
-//       });
-// }
-// const modifyText = (command, defaultUi, value) => {
-//     document.execCommand(command, defaultUi, value);
-// };
-//   fontName.addEventListener('change',()=>{
-//     // modifyText(fontName.id,false,fontName.value);
-//     formatDoc(fontName.value);
-//   })
-// advanceOption.forEach((button)=>{
-//     button.addEventListener('change',()=>{
-//         modifyText(button.id,false,button.value);
-//         console.log
-//     })
-// })
+const checkList=document.querySelector('.check-list');
+const imageButton=document.querySelector('.image-button');
+const imageDropdown=document.querySelector('.image-dropdown');
+const imageInput=document.querySelector('#image-input');
+const uploadBtn = document.getElementById("upload-btn");
+const propertyBox=document.getElementById('propertyBox');
+const buttons =document.querySelectorAll('.buttons');
+buttons.forEach(button => {
+    button.addEventListener("mouseover", function(event) {
+        // console.log(button.type);
+    propertyBox.innerText = button.dataset.propertymsg;
+    const buttonRect = event.target.getBoundingClientRect();
+    if(button.type=='select-one'){
+        propertyBox.style.left = buttonRect.left + "px";
+    }else{
+        propertyBox.style.left = (buttonRect.left-30) + "px";
+    }
+    propertyBox.style.top = 50 +"px";
+    propertyBox.style.display = "block";
+    });
+    button.addEventListener("mouseleave", function() {
+        propertyBox.style.display = "none";
+    });
+});
+formatButtons.forEach((button)=>{
+    button.addEventListener('click',()=>{
+        button.classList.toggle('active');
+    })
+})
+alignButtons.forEach((button)=>{
+    button.addEventListener('click',()=>{
+        alignButtons.forEach((button)=>{
+            button.classList.remove('active');
+        });
+        button.classList.add('active');
+    })
+})
+bulletButtons.forEach((button)=>{
+    button.addEventListener('click',()=>{
+        bulletButtons.forEach((button)=>{
+            button.classList.remove('active');
+        });
+        button.classList.add('active');
 
-// const highlighter=(className,needsRemoval)=>{
-//     className.forEach((buttons)=>{
-//         buttons.addEventListner("click",function () {
-//             console.log('hello');
-//                 if (needsRemoval) {
-//                     let alreadyActive = false;
-//                     if (buttons.classlist.contains("active")) {
-//                         alreadyActive = true;
-//                     }
-//                     highlighterRemover(className);
-//                     if (!alreadyActive) {
-//                         buttons.classlist.add("active");
-//                     }
-//                 }
-//                 else {
-//                     buttons.classlist.toggle('active');
-//                 }
-//             })
-//     })
-// }
-// const highlighterRemover=()=>{
-//     className.forEach((buttons)=>{
-//         buttons.classlist.remove("active");
-//     })
-// }
-// window.onload = initializer();
+    })
+})
+checkList.addEventListener('click',()=>{
+    const checkbox = document.createElement('input');
+    const div = document.createElement('div');
+    checkbox.type = 'checkbox';
+    div.appendChild(checkbox);
+    textArea.appendChild(div);
+})
+// spacingButtons.forEach((button)=>{
+//     let indent=0;
+//     if(button.classList.contains('increase-indent')){
+//         button.addEventListener('click',()=>{
+//             textArea.style.textIndent=`${indent+50}px`;
+//         })
+//     }else{  
+//         button.addEventListener('click',()=>{
+//             textArea.style.textIndent=`${indent-50}px`;
+//         })
+//     }
+// })
+uploadBtn.addEventListener("click", function () {
+    imageInput.click();
+  });
+
+  imageInput.addEventListener("change", function () {
+    const file = imageInput.files[0];
+    const reader = new FileReader();
+
+    reader.addEventListener("load", function () {
+        const image=document.createElement('img');
+        image.src=reader.result;
+        textArea.appendChild(image);
+    });
+    reader.readAsDataURL(file);
+    imageDropdown.classList.add('show-edit');
+    document.querySelector('.image-button-div').classList.remove('active');
+  });
 function formatDoc(cmd, value = null) {
-    console.log(value);
+    // console.log(value);
     if (value) {
         document.execCommand(cmd, false, value);
     } else {
@@ -98,18 +112,6 @@ function addlink() {
     formatDoc('createLink', url);
     // document.execCommand('createLink',false,url);
 }
-textArea.addEventListener('mouseenter', function () {
-    const a = textArea.querySelectorAll('a');
-    a.forEach(item => {
-        item.addEventListener('mouseenter', function () {
-            textArea.setAttribute('contenteditable', false);
-            item.target = '_blank';
-        })
-        item.addEventListener('mouseleave', function () {
-            textArea.setAttribute('contenteditable', true);
-        })
-    })
-})
 function fontEditor(fontName) {
     document.execCommand("fontName", false, fontName);
 }
@@ -133,7 +135,6 @@ function fontSize(size) {
         }
         selectedHtml = container.innerHTML;
     }
-
     let html = `<div style="font-size: ${size}px;">${selectedHtml}</div>`
     document.execCommand('insertHTML', false, html);
 }
@@ -171,56 +172,25 @@ function selectElementContents(el) {
     sel.removeAllRanges();
     sel.addRange(range);
 }
-const Buttons = document.getElementsByTagName("button")
-const bold=document.getElementById('bold');
-const buttonArray = Array.from(Buttons);
-buttonArray.forEach((button) => {
-    // console.log(button)
-    button.addEventListener('click', (ele) => {
-        console.log(button);
-        button.classList.toggle('active');
-    })
-    // button.addEventListener('mouseover', (ele) => {
-    //     // button.classList.add('active');
-    //     if (button.classList.contains('font-bold')){
-    //         bold.style.visibility='visible';
-    //     }
-    //     else{
-    //         bold.style.visibility='hidden';
-    //     }
-    // })
-})
-// buttonArray.forEach((button)=>{
-//     button.addEventListener('mouseover',(ele)=>{
-//         // button.classList.add('active');
-//         if(button.classList.contains(''))
-//         bold.style.display='block';
-//     })
-// })
-// buttonArray.forEach((button)=>{
-//     button.addEventListener('mouseout',(ele)=>{
-//         button.classList.add('active');
-//         bold.style.display='none';
-//     })
-// })
-// const body=document.getElementsByTagName("body");
-// body.addEventListener('mouseover',(e)=>{
-//     if(!e.target.classList.contains('font-bold')){
-//         bold.style.visibility='hidden';
-//     }
-// })
-// function changeFont() {
-//     const Font = document.getElementById('input-font').value;
-//     document.execCommand('fontName', false, Font);
-// }
 function changeFont() {
     const Font = document.getElementById('input-font').value;
     document.execCommand('fontName', false, Font);
 }
-  function changeSize() {
-    const size = document.getElementById('fontSize').value;
-    document.execCommand('fontSize', false, size);
-}
+// fontSize.addEventListener("change", function() {
+//     const selected = window.getSelection().getRangeAt(0);
+//     const parent = selected.commonAncestorContainer;
+//     let node = selected.startContainer;
+//     // console.log(node)
+//     while (node !== parent) {
+//       node.style.fontSize = fontSize.value + "px";
+//       console.log(node.style.fontSize);
+//       node = node.parentNode;
+//     }
+// });
+// function changeSize() {
+//     const size = document.getElementById('fontSize').value;
+//     document.execCommand('fontSize', false, size);
+// }
 addNewDiv.addEventListener('click',()=>{
     const div=document.createElement('div');
     div.setAttribute('id','text-area');
@@ -228,9 +198,34 @@ addNewDiv.addEventListener('click',()=>{
     div.setAttribute('spellcheck','false');
     mainContent.appendChild(div);
 })
-
+document.addEventListener('keydown',(e)=>{
+    if(e.ctrlKey && e.key === "/"){ 
+        const div=document.createElement('div');
+        div.setAttribute('id','text-area');
+        div.setAttribute('contenteditable','true');
+        div.setAttribute('spellcheck','false');
+        mainContent.appendChild(div);
+    }
+})
+const editingButton=document.querySelector('.editing-button');
+const editingButton2=document.querySelector('.editing-button2');
+const propertyBar=document.querySelector('.property-bar');
+const messageIcon=document.querySelector('.message-icon');
+editingButton.addEventListener('mouseleave',()=>{
+    showHide.classList.add("show-edit");
+})
+editingButton2.addEventListener('mouseleave',()=>{
+    showHide2.classList.add("show-edit");
+})
 selectBtn.addEventListener('click',()=>{
     showHide.classList.toggle("show-edit");
+})
+selectBtn2.addEventListener('click',()=>{
+    showHide2.classList.toggle("show-edit");
+})
+imageButton.addEventListener('click',()=>{
+    document.querySelector('.image-button-div').classList.toggle('active');
+    imageDropdown.classList.toggle('show-edit');
 })
 options.forEach((option)=>{
     // console.log(option);
@@ -238,8 +233,14 @@ options.forEach((option)=>{
         let selectedOption=option.querySelector('.inner').innerText;
         if(selectedOption=='Viewing'){
             textArea.setAttribute('contenteditable','false');
+            propertyBar.style.display='none';
+            editingButton2.classList.remove('show-edit');
+            messageIcon.classList.add('show-edit')
         }else{
             textArea.setAttribute('contenteditable','true');
+            propertyBar.style.display='flex';
+            editingButton2.classList.add('show-edit');
+            messageIcon.classList.remove('show-edit')
         }
         // console.log(selectedOption);
         editingText.innerText=selectedOption;
@@ -253,11 +254,6 @@ options.forEach((option)=>{
         // console.log(showHide.className)
     })
 })
-// const bodyDiv=document.getElementsByTagName('body');
-// mainContent.addEventListener('mouseover',(ele)=>{
-//     // console.log('hello');
-//     console.log(ele.className);
-// })
 
 
 
