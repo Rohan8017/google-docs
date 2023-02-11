@@ -28,17 +28,80 @@
                 </div>
             </div>
             <nav class="document-buttons">
-                <button class="file-button">
-                    <p>File</p>
-                </button>
-                <button class="Edit-button">Edit</button>
-                <button class="view-button">View</button>
-                <button class="insert-button">Insert</button>
-                <button class="format-button">Format</button>
-                <button class="tools-button">Tools</button>
-                <button class="extensions-button">Extentions</button>
-                <button class="help-button">Help</button>
-                <span class="doc-timing">last edit was <span class="update-timings">1 hours</span> ago</span>
+                <div class="document-mouseover-button ">
+                    <div class="file-button">
+                      <button class="button">File</button>
+                    </div>
+                    <div class="dropdown-document-file-button document-button show-edit">
+                      <ul class="dropdown-document-file">
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="document-mouseover-button">
+                    <div class="edit-button">
+                      <button class="button">Edit</button>
+                    </div>
+                    <div class="dropdown-document-edit-button document-button show-edit">
+                      <ul class="dropdown-document-edit">
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="document-mouseover-button">
+                    <div class="view-button">
+                      <button class="button">View</button>
+                    </div>
+                    <div class="dropdown-document-view-button document-button show-edit">
+                      <ul class="dropdown-document-view">
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="document-mouseover-button">
+                    <div class="insert-button">
+                      <button class="button">Insert</button>
+                    </div>
+                    <div class="dropdown-document-insert-button document-button show-edit">
+                      <ul class="dropdown-document-insert change-width">
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="document-mouseover-button">
+                    <div class="format-button">
+                      <button class="button">Format</button>
+                    </div>
+                    <div class="dropdown-document-format-button document-button show-edit">
+                      <ul class="dropdown-document-format">
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="document-mouseover-button">
+                    <div class="tools-button">
+                      <button class="button">Tools</button>
+                    </div>
+                    <div class="dropdown-document-tools-button document-button show-edit">
+                      <ul class="dropdown-document-tools">
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="document-mouseover-button">
+                    <div class="extensions-button">
+                      <button class="button">Extensions</button>
+                    </div>
+                    <div class="dropdown-document-extensions-button document-button show-edit">
+                      <ul class="dropdown-document-extensions">
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="document-mouseover-button">
+                    <div class="help-button">
+                      <button class="button">Help</button>
+                    </div>
+                    <div class="dropdown-document-help-button document-button show-edit">
+                      <ul class="dropdown-document-help">
+                      </ul>
+                    </div>
+                  </div>
+                  <span class="doc-timing">last edit was<span class="update-timings">1 hours</span> ago</span>
+                </nav> 
             </nav>
         </div>
         <div class="right-header">
@@ -88,27 +151,23 @@
         </div>
     </header>
     <div class="property-bar">
-        <button onclick="formatDoc('undo')" class="undo-button">
+        <button onclick="formatDoc('undo')" class="undo-button buttons" data-propertymsg="undo(Ctrl+Z)">
             <i class="fa-solid fa-rotate-left"></i>
-            <span id="undo">undo(Ctrl+z)</span>
         </button>
-        <button class="redo-button" onclick="formatDoc('redo')">
+        <button class="redo-button buttons" onclick="formatDoc('redo')" data-propertymsg="redo(Ctrl+Y)">
             <i class="fa-solid fa-rotate-right"></i>
-            <span id="redo">redo(Ctrl+Y)</span>
         </button>
-        <button class="print-button">
+        <button class="print-button buttons" data-propertymsg="Print(Ctrl+P)">
             <i class="fa-solid fa-print"></i>
-            <span id="print">Print(Ctrl+P)</span>
         </button>
-        <button class="spelling-check-button">
+        <button class="spelling-check-button buttons" data-propertymsg="Spelling and Grammer Check">
             <i class="fa-regular fa-floppy-disk"></i>
-            <span id="spelling-check">Spelling and Grammer Check</span>
         </button>
-        <button class="paint-format-button" id="add-div">
+        <button class="paint-format-button buttons" id="add-div" data-propertymsg="add new page">
             <i class="fa-solid fa-comment"></i>
-            <span id="paint-format">paint format</span>
         </button>
-        <select class="zoom-button" onchange="screenSize(this.value)">
+        <div id="propertyBox"></div>
+        <select class="zoom-button buttons" onchange="screenSize(this.value)" data-propertymsg="zoom">
             <option value="750">100%</option>
             <option value="1400">Fit</option>
             <option value="350">50%</option>
@@ -117,7 +176,7 @@
             <option value="1300">150%</option>
             <option value="1600">200%</option>
         </select>
-        <select class="text-type" onchange="fontType(this.value)">
+        <select class="text-type buttons" onchange="fontType(this.value)" data-propertymsg="styles">
             <option value="1">Normal text</option>
             <option value="3">title</option>
             <option value="2">Heading 1</option>
@@ -125,7 +184,7 @@
             <option value="1.17">heading 3</option>
             <option value="1.10">heading 4</option>
         </select>
-        <select id="input-font" class="input" onchange="changeFont (this);">
+        <select id="input-font" class="input buttons" onchange="changeFont (this);" data-propertymsg="font">
             <option value="Arial">Arial</option>
             <option value="Helvetica">Helvetica</option>
             <option value="Times New Roman">Times New Roman</option>
@@ -140,92 +199,87 @@
             <option value="Tahoma">Tahoma</option>
             <option value="Comic Sans MS">Comic Sans MS</option>
         </select>
-        <select id="fontSize" onclick="changeSize()">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
+        <select id="fontSize" class="buttons" onchange="fontSize(this.value)" data-propertymsg="Font Size">
+            <option value="16">16</option>
+            <option value="20">20</option>
+            <option value="24">24</option>
+            <option value="28">28</option>
+            <option value="32">32</option>
+            <option value="36">36</option>
+            <option value="40">40</option>
         </select>
         <hr class="vertical" />
-        <button class="font-bold  format" onclick="formatDoc('bold')">
+        <button class="font-bold  format buttons" onclick="formatDoc('bold')" data-propertymsg="Bold(Ctrl+B)">
             <i class="fa-solid fa-b"></i>
-            <span id="bold">Bold(Ctrl+B)</span>
         </button>
-        <button class="font-italic  format" onclick="formatDoc('italic')">
+        <button class="font-italic  format buttons" onclick="formatDoc('italic')" data-propertymsg="italic(Ctrl+I)">
             <i class="fa-solid fa-italic"></i>
-            <span id="italic">italic</span>
         </button>
-        <button class="font-underline  format" onclick="formatDoc('underline')">
+        <button class="font-underline  format buttons" onclick="formatDoc('underline')" data-propertymsg="Underline(Ctrl+u)">
             <i class="fa-solid fa-underline"></i>
-            <span id="underline">Underline(Ctrl+U)</span>
         </button>
-        <button class="font-colour  format">
+        <button class="font-colour  format buttons" data-propertymsg="Text Colour">
             <i class="fa-solid fa-font"></i>
-            <input type="color" oninput="formatDoc('foreColor', this.value); this.value='#000000';">
-            <span id="fontcolor">Text Colour</span>
+            <input type="color" oninput="formatDoc('foreColor', this.value); this.value='#000000';" >
         </button>
-        <button class="highlight-colour ">
+        <button class="highlight-colour buttons" data-propertymsg="Highlight Colour">
             <i class="fa-solid fa-highlighter"></i>
             <input type="color" oninput="formatDoc('hiliteColor', this.value); this.value='#000000';">
-            <span id="highlightcolour">Highlight Colour</span>
         </button>
         <hr class="vertical" />
-        <button class="link-button " onclick="addlink()">
+        <button class="link-button buttons" onclick="addlink()" data-propertymsg="Insert Link(Ctrl+k)">
             <i class="fa-solid fa-link"></i>
-            <span id="link">Insert Link(Ctrl+K)</span>
         </button>
-        <button class="comment-button">
+        <button class="comment-button buttons" data-propertymsg="Add Comment">
             <i class="fa-solid fa-comment"></i>
-            <span id="comment">Add Comment</span>
         </button>
-        <button class="image-button">
-            <i class="fa-regular fa-image"></i>
-            <i class="fa-solid fa-caret-down"></i>
-            <span id="image">insert Image</span>
-        </button>
+        <div class="image-button-div buttons" data-propertymsg="Insert Image">
+            <div class="image-button">
+                <i class="fa-regular fa-image"></i>
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+            <div class="image-dropdown show-edit">
+                <input type="file" id="image-input" accept="image/jpg,image/png">
+                <button id="upload-btn">Upload Image</button>
+            </div>
+        </div>
         <hr class="vertical"/>
-        <button class="text-left-align  align active" onclick="formatDoc('justifyLeft')">
+        <button class="text-left-align  align active buttons" onclick="formatDoc('justifyLeft')" data-propertymsg="Left Align">
             <i class="fa-solid fa-align-left"></i>
-            <span id="left-align">Left Align</span>
         </button>
-        <button class="text-middle-align  align" onclick="formatDoc('justifyCenter')">
+        <button class="text-middle-align  align buttons" onclick="formatDoc('justifyCenter')" data-propertymsg="Middle Align">
             <i class="fa-solid fa-align-center"></i>
-            <span id="middle-align">Middle Align</span>
         </button>
-        <button class="text-right-align  align" onclick="formatDoc('justifyRight')">
+        <button class="text-right-align  align buttons" onclick="formatDoc('justifyRight')" data-propertymsg="Right Align">
             <i class="fa-solid fa-align-right"></i>
-            <!-- <span id="right-align">Right Align</span> -->
         </button>
-        <button class="text-justify-align  align" onclick="formatDoc('justifyFull')">
+        <button class="text-justify-align  align buttons" onclick="formatDoc('justifyFull')" data-propertymsg="Justify">
             <i class="fa-solid fa-align-justify"></i>
         </button>
-        <hr class="vertical" />
-        <button class="check-list bullet">
+        <hr class="vertical "/>
+        <button class="check-list bullet buttons" data-propertymsg="Checklist">
             <i class="fa-solid fa-list-check"></i>
             <i class="fa-solid fa-caret-down"></i>
         </button>
-        <button class="ul-bullet-list bullet" onclick="formatDoc('insertUnorderedList')">
+        <button class="ul-bullet-list bullet buttons" onclick="formatDoc('insertUnorderedList')" data-propertymsg="Unordered List">
             <i class="fa-solid fa-list-ul"></i>
             <i class="fa-solid fa-caret-down"></i>
         </button>
-        <button class="ol-bullet-list bullet " onclick="formatDoc('insertOrderedList')">
+        <button class="ol-bullet-list bullet buttons" onclick="formatDoc('insertOrderedList')" data-propertymsg="Numbered List">
             <i class="fa-solid fa-list-ol"></i>
             <i class="fa-solid fa-caret-down"></i>
         </button>
-        <button class="increase-indent spacing">
+        <button class="increase-indent spacing buttons" onclick="formatDoc('indent')" data-propertymsg="Increase Indent">
             <i class="fa-solid fa-indent"></i>
         </button>
-        <button class="decrease-indent spacing">
+        <button class="decrease-indent spacing buttons" onclick="formatDoc('outdent')" data-propertymsg="Decrease Indent">
             <i class="fa-solid fa-outdent"></i>
         </button>
         <hr class="vertical" />
-        <button class="clear-style " onclick="formatDoc('unlink')">
+        <button class="clear-style buttons" onclick="formatDoc('unlink')" data-propertymsg="Unlink">
             <i class="fa-solid fa-text-slash"></i>
         </button>
-        <div class="editing-button">
+        <div class="editing-button buttons" data-propertymsg="Editing Mode">
             <div class="editing-dropdown">
                 <div class="editing-div">
                     <i id="icon-change" class="fa fa-pencil" aria-hidden="true"></i>
@@ -260,7 +314,7 @@
             </div>
         </div>
         <hr class="vertical" />
-        <button class="show-hide-right-navbar ">
+        <button class="show-hide-right-navbar buttons" data-propertymsg="Hide the Menus">
             <i class="fa-solid fa-angle-up"></i>
         </button>
     </div>
@@ -276,5 +330,6 @@
         <!-- <div id="text-area" contenteditable="true" spellcheck="false"></div> -->
     </main>
     <script src="index.js"></script>
+    <script src="navbar.js"></script>
 </body>
 </html>

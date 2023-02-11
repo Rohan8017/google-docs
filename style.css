@@ -55,17 +55,70 @@ header{
     padding: 5px 3px;
 }
 .document-buttons{
-    margin-left: -4px;
+    display: flex;
+    width: 550px;
+    justify-content: space-evenly;
+    background: white;
 }
-.document-buttons button{
+.document-buttons div div button{
     /* margin-top: 5px; */
    padding: 6px;
    background: none;
    border: none;
 }
-.document-buttons button:hover{
-    background:rgba(128, 128, 128, 0.241);
+.document-button{
+    position: absolute;
+    background: white;
+    top: 70px;
+  }
+  .document-button ul{
+    padding: 0;
+    list-style: none;
+    border: 1px solid grey;
+    width: 280px;
+  }
+  .document-button ul li{
+    padding: 7px 15px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .document-button ul li:hover{
+    background: rgba(128, 128, 128, 0.16);
+  }
+  .document-button ul li i{
+    font-size: 13px;
+    opacity: .6;
+  }
+  .margin-bottom10{
+    margin-bottom: 5px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.368);
+  }
+  .change-width{
+    height: 90vh;
+    overflow-y: scroll;
+  }
+  .change-width::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  .change-width::-webkit-scrollbar-track {
+    background: #f1f1f1;
     border-radius: 10px;
+  }
+  
+  /* Handle */
+  .change-width::-webkit-scrollbar-thumb {
+    background: #8888884e; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  .change-width::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+.document-buttons div div button:hover{
+    background:rgba(128, 128, 128, 0.241);
+    border-radius: 3px;
 }
 .doc-timing{
     margin-left: 15px;
@@ -206,7 +259,7 @@ hr.vertical {
     margin-top: 30px;
 }
 .main-content{
-    background:rgba(128, 128, 128, 0.123);
+    background:rgba(128, 128, 128, 0.047);
     /* position: relative; */
     /* top: 123px; */
     width: calc(100% - 60px);
@@ -301,69 +354,41 @@ hr.vertical {
 .show-edit{
     display: none;
 }
-#bold,#italic,#undo,#redo,#print,#spelling-check,#paint-format,#zoom,#underline,
-#fontcolor,#highlightcolour,#link,#comment,#image,#left-align,#middle-align{
-    /* display: none; */
-    visibility: hidden;
+.image-button-div{
+    margin-right: 5px;
+    cursor: pointer;
+}
+.image-button{
+    margin-top: 5px;
+}
+.image-dropdown{
+    border: 1px solid grey;
+    padding: auto;
+    position: absolute;
+    top: 52px;
+    width: 180px;
+    /* left: 20px; */
+}
+.image-dropdown:hover{
+    background: rgba(128, 128, 128, 0.221);
+}
+#image-input{
+    display: none;
+}
+#propertyBox{
+    /* visibility: hidden; */
+    display: none;
     position: absolute;
     z-index: 100;
-    top: 40px;
-    left: -15px;
-    font-size: 13px;
+    /* top: 40px;
+    left: -15px; */
+    font-size: 14px;
     /* width: 50px; */
     padding: 3px 10px;
-    background: black;
+    background: rgba(0, 0, 0, 0.875);
     color: white;
     border-radius: 5px;
-}
-.font-bold:hover #bold{
-    visibility: visible;
-}
-.undo-button:hover #undo{
-    visibility: visible;
-}
-.font-italic:hover #italic{
-    visibility: visible;
-}
-.redo-button:hover #redo{
-    visibility: visible;
-}
-.print-button:hover #print{
-    visibility: visible;
-}
-.spelling-check-button:hover #spelling-check{
-    visibility: visible;
-}
-.paint-format-button:hover #paint-format{
-    visibility: visible;
-}
-.zoom-button:hover #zoom{
-    visibility: visible;
-}
-.font-underline:hover #underline{
-    visibility: visible;
-}
-.font-colour:hover #fontcolor{
-    visibility: visible;
-    width: 100px;
-}
-.link-button:hover #link{
-    visibility: visible;
-}
-.comment-button:hover #comment{
-    visibility: visible;
-}
-.image-button:hover #image{
-    visibility: visible;
-}
-.text-left-align:hover #left-align{
-    visibility: visible;
-}
-.text-middle-align:hover #middle-align{
-    visibility: visible;
-}
-.text-right-align:hover #right-align{
-    visibility: visible;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
